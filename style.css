@@ -1,0 +1,271 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: linear-gradient(135deg, #0a0a2a 0%, #000 100%);
+	color: #fff;
+	font-family: "Segoe UI", system-ui, sans-serif;
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem;
+	position: relative;
+	z-index: 2;
+}
+
+.logo-container {
+	text-align: center;
+	margin-bottom: 3rem;
+	animation: float 6s ease-in-out infinite;
+}
+
+.logo-container img {
+	height: 64px;
+	width: auto;
+	filter: drop-shadow(0 0 20px rgba(0, 170, 255, 0.3));
+}
+
+.hero {
+	text-align: center;
+	margin-bottom: 4rem;
+}
+
+.title {
+	font-size: 3.5rem;
+	font-weight: 700;
+	margin-bottom: 1rem;
+	background: linear-gradient(90deg, #00aaff, #00ffaa);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	opacity: 0;
+	animation: fadeInUp 1s forwards 0.5s;
+}
+
+.subtitle {
+	font-size: 1.4rem;
+	color: #a0a0ff;
+	margin-bottom: 2rem;
+	opacity: 0;
+	animation: fadeInUp 1s forwards 0.8s;
+}
+
+.secret-message {
+	background: rgba(0, 170, 255, 0.1);
+	border: 1px solid rgba(0, 170, 255, 0.3);
+	border-radius: 15px;
+	padding: 2rem;
+	margin: 3rem auto;
+	max-width: 800px;
+	backdrop-filter: blur(10px);
+	cursor: pointer;
+	transition: all 0.3s ease;
+	opacity: 0;
+	animation: fadeInUp 1s forwards 1.1s;
+}
+
+.secret-message:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 10px 30px rgba(0, 170, 255, 0.2);
+	border-color: #00aaff;
+}
+
+.message-title {
+	font-size: 1.2rem;
+	color: #00aaff;
+	margin-bottom: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+
+.message-content {
+	font-size: 1.1rem;
+	line-height: 1.6;
+	color: #ccd6ff;
+	text-align: center;
+}
+
+.countdown-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+	gap: 1.5rem;
+	max-width: 600px;
+	margin: 3rem auto;
+}
+
+.countdown-item {
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 15px;
+	padding: 1.5rem;
+	text-align: center;
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	transition: all 0.3s ease;
+}
+
+.countdown-item:hover {
+	transform: scale(1.05);
+	border-color: #00aaff;
+	box-shadow: 0 5px 20px rgba(0, 170, 255, 0.3);
+}
+
+.countdown-value {
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: #00ffaa;
+	margin-bottom: 0.5rem;
+	text-shadow: 0 0 10px rgba(0, 255, 170, 0.5);
+}
+
+.countdown-label {
+	font-size: 0.9rem;
+	color: #a0a0ff;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.interactive-buttons {
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin: 3rem 0;
+}
+
+.btn {
+	background: linear-gradient(135deg, #00aaff, #0066cc);
+	color: white;
+	padding: 1rem 2rem;
+	border: none;
+	border-radius: 50px;
+	font-size: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.btn:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 10px 25px rgba(0, 170, 255, 0.4);
+}
+
+.btn-secondary {
+	background: transparent;
+	border: 2px solid #00aaff;
+	color: #00aaff;
+}
+
+.btn-secondary:hover {
+	background: rgba(0, 170, 255, 0.1);
+}
+
+.hidden-text {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.5s ease;
+	color: #00ffaa;
+	font-weight: 600;
+	text-align: center;
+	margin-top: 1rem;
+}
+
+.hidden-text.visible {
+	max-height: 50px;
+}
+
+.particles {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 1;
+}
+
+.particle {
+	position: absolute;
+	background: rgba(0, 170, 255, 0.3);
+	border-radius: 50%;
+	pointer-events: none;
+}
+
+.medical-icon {
+	font-size: 2rem;
+	margin: 0 10px;
+	opacity: 0.7;
+}
+
+.footer {
+	text-align: center;
+	margin-top: 4rem;
+	padding-top: 2rem;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	color: #888;
+	font-size: 0.9rem;
+}
+
+@keyframes fadeInUp {
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+}
+
+@keyframes float {
+	0%,
+	100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-4px);
+	}
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 0.3;
+	}
+	50% {
+		opacity: 0.6;
+	}
+}
+
+@media (max-width: 768px) {
+	.title {
+		font-size: 2.5rem;
+	}
+
+	.countdown-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.interactive-buttons {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.btn {
+		width: 100%;
+		max-width: 300px;
+		justify-content: center;
+	}
+}
